@@ -8,7 +8,7 @@ const isDev = () => process.env.NODE_ENV === 'dev';
 const app = express();
 let port = 3000;
 
-if(!isDev()) {
+if (!isDev()) {
   port = 80;
 }
 
@@ -21,6 +21,6 @@ app.use('/static', express.static(publicPath));
 app.get('/', (req, res) => res.send('Hello World!'));
 
 app.listen(port, () => {
-  console.log(`Example app listening on port: ${port}!`)
+  console.log(`Example app listening on port: ${port}!`);
   open(`http://localhost:${port}/`);
 });
